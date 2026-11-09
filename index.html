@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#7048e8"><title>Vocab Master – A to Z Quiz</title>
+<meta name="theme-color" content="#7048e8">
+<link rel="manifest" href="manifest.json"><title>Vocab Master – A to Z Quiz</title>
 <style>
 :root{--bg:#f3f0ff;--card:#fff;--tx:#1f1d2b;--mut:#6c6a7d;--bd:#e4e0f5;--gr:#2b8a3e;--grb:#d3f9d8;--rd:#c92a2a;--rdb:#ffe0e0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14121f;--card:#211e33;--tx:#f1eefc;--mut:#a9a5c4;--bd:#38335a;--gr:#8ce99a;--grb:#17382a;--rd:#ff8787;--rdb:#45202a}}
@@ -67,4 +68,5 @@ function submit(){let c=0,w=0;A.forEach((a,n)=>{if(a>=0)a===Q[n].a?c++:w++});con
 $.innerHTML=`<div class="sec">Score Summary</div><div class="score"><div class="e">${e}</div><div class="n">${s}</div><div>out of ${Q.length*2}</div></div><div class="stats"><div class="st" style="background:linear-gradient(135deg,#2b8a3e,#69db7c)"><b>${c}</b>Correct<br>+${c*2}</div><div class="st" style="background:linear-gradient(135deg,#e03131,#ff8787)"><b>${w}</b>Incorrect<br>−${w*.5}</div><div class="st" style="background:linear-gradient(135deg,#495057,#adb5bd)"><b>${u}</b>Unattempted<br>0</div></div><div class="row"><button class="btn alt" onclick="again()">🔁 Reattempt</button><button class="btn" onclick="sol()">💡 Solution</button></div><div class="row"><button class="btn alt" onclick="home()">🏠 Home</button></div>`}
 function sol(){window.scrollTo(0,0);$.innerHTML=`<div class="sec">💡 Solution</div>`+Q.map((q,n)=>`<div class="q"><span class="qn">Q${n+1}</span>${A[n]<0?'<span class="sk">Skipped</span>':""}<div class="word">${q.w}</div>${q.o.map((o,j)=>`<div class="opt ${j===q.a?"ok":A[n]===j?"no":""}"><i>${L[j]}</i>${o}</div>`).join("")}<div class="hi">📖 हिंदी अर्थ: ${q.h}</div></div>`).join("")+`<div class="row"><button class="btn alt" onclick="again()">🔁 Reattempt</button><button class="btn" onclick="home()">🏠 Home</button></div>`}
 home();
+if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script></body></html>

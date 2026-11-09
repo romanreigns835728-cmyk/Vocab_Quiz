@@ -1,0 +1,35 @@
+{
+ "name": "Vocab Master – A to Z Quiz",
+ "short_name": "Vocab Master",
+ "description": "A to Z vocabulary quiz with Hindi meanings, 5 difficulty levels and sets of 25 questions.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "lang": "hi",
+ "background_color": "#f3f0ff",
+ "theme_color": "#7048e8",
+ "categories": [
+  "education"
+ ],
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
